@@ -25,7 +25,6 @@ class ProductDetailActivity : AppCompatActivity() {
         name.text = productBundle?.name
 
         Glide.with(this).load(productBundle?.urlImage).into(image)
-        //Tem que criar a Toolbar aqui
         setupActionToolbar("Product Detail", false)
     }
 }
