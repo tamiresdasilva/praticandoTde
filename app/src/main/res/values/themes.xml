@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.PraticandoTde" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF69B4</item>
+        <item name="colorPrimaryVariant">#FF1493</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#FFC0CB</item>
+        <item name="colorSecondaryVariant">#FFB6C1</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="Theme.PraticandoTde" parent="Base.Theme.PraticandoTde" />
+</resources>
