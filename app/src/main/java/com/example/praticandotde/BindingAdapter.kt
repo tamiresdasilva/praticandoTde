@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 object BindingAdapter {
     @BindingAdapter("loadPhoto")
     @JvmStatic
-    fun loadPhoto(view: ImageView, url: String) {
-        Glide.with(view.context).load(url).centerCrop().into(view)
+    fun ImageView.loadPhoto(url: String) {
+        Glide.with(context).load(url).placeholder(R.drawable.ic_launcher_background).into(this)
     }
 }

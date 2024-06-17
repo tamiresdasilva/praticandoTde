@@ -3,8 +3,9 @@ package com.example.praticandotde
 
 import androidx.lifecycle.ViewModel
 import com.example.praticandotde.Product
+import dagger.hilt.android.lifecycle.HiltViewModel
 
-
+@HiltViewModel
 class MainViewModel : ViewModel() {
     private val list = mutableListOf(
         Product(

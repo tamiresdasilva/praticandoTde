@@ -1,30 +1,33 @@
 package com.example.praticandotde
 
+import android.os.Build
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.example.praticandotde.databinding.ActivityProductDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProductDetailActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityProductDetailBinding
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_product_detail)
+        binding = ActivityProductDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val productBundle = intent.getSerializableExtra("product") as? Product
+        setSupportActionBar(binding.toolbar)
+        configureToolbar("Detalhe do produto", true)
 
-        val image = findViewById<ImageView>(R.id.imgProduct)
-        val price = findViewById<TextView>(R.id.tvProductPrice)
-        val name = findViewById<TextView>(R.id.tvProductName)
+        val productBundle = if (Build.VERSION.SDK_INT >= 33) {
+            intent?.getSerializableExtra("data", Product::class.java)
+        } else {
+            intent?.getSerializableExtra("data") as? Product
+        }
 
-        price.text = productBundle?.price
-        name.text = productBundle?.name
-
-        Glide.with(this).load(productBundle?.urlImage).into(image)
-        setupActionToolbar("Product Detail", false)
+        productBundle?.let { product ->
+            binding.product = product
+        }
     }
 }
