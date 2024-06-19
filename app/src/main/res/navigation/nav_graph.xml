@@ -12,7 +12,7 @@
         tools:layout="@layout/activity_product_detail" />
     <fragment
         android:id="@+id/add"
-        android:name="com.example.praticandotde.CreateProductFragment"
+        android:name="com.example.praticandotde.presentation.fragments.CreateProductFragment"
         android:label="Adicionar Produto"
         tools:layout="@layout/fragment_create_product" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/home"
-        android:name="com.example.praticandotde.HomeFragment"
+        android:name="com.example.praticandotde.presentation.fragments.HomeFragment"
         android:label="Página Inicial"
         tools:layout="@layout/fragment_home" >
         <action

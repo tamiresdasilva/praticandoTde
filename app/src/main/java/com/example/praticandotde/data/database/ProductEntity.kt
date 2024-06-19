@@ -2,7 +2,7 @@ package com.example.praticandotde.data.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.praticandotde.Product
+import com.example.praticandotde.data.Product
 
 @Entity(tableName = "products")
 data class ProductEntity(

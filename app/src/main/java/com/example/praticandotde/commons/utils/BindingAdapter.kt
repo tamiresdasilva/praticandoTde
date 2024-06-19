@@ -1,8 +1,9 @@
-package com.example.praticandotde
+package com.example.praticandotde.commons.utils
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.example.praticandotde.R
 
 object BindingAdapter {
     @BindingAdapter("loadPhoto")

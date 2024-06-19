@@ -3,7 +3,7 @@
     <data>
         <variable
             name="product"
-            type="com.example.praticandotde.Product" />
+            type="com.example.praticandotde.data.Product" />
     </data>
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"

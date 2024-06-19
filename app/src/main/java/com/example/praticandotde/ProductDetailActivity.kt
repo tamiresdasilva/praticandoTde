@@ -4,7 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
+import com.example.praticandotde.data.Product
 import com.example.praticandotde.databinding.ActivityProductDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 

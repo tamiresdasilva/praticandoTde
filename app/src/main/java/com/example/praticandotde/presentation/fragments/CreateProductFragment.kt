@@ -1,19 +1,22 @@
-package com.example.praticandotde
+package com.example.praticandotde.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.praticandotde.R
+import com.example.praticandotde.data.Product
 import com.example.praticandotde.databinding.FragmentCreateProductBinding
+import com.example.praticandotde.presentation.viewmodels.ProductViewmodel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CreateProductFragment : Fragment() {
     private lateinit var binding: FragmentCreateProductBinding
-    //private lateinit var productViewModel: ProductViewmodel
+    private lateinit var productViewModel: ProductViewmodel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +29,7 @@ class CreateProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //productViewModel = ViewModelProvider(this)[ProductViewmodel::class.java]
+        productViewModel = ViewModelProvider(this)[ProductViewmodel::class.java]
 
         binding.btnSalvar.setOnClickListener {
             val product = Product(
@@ -35,7 +38,7 @@ class CreateProductFragment : Fragment() {
                 urlImage = binding.inputUrlProduto.text.toString()
             )
 
-            //productViewModel.addProduct(product)
+            productViewModel.addProduct(product)
 
             findNavController().navigate(R.id.action_createProductFragment_to_homeFragment)
         }

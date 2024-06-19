@@ -2,10 +2,12 @@ package com.example.praticandotde
 
 
 import androidx.lifecycle.ViewModel
-import com.example.praticandotde.Product
+import com.example.praticandotde.data.Product
+import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-@HiltViewModel
+//@HiltViewModel
 class MainViewModel : ViewModel() {
     private val list = mutableListOf(
         Product(
