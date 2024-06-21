@@ -2,16 +2,16 @@ package com.example.praticandotde
 
 import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.praticandotde.data.Product
 import com.example.praticandotde.databinding.ActivityProductDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("DEPRECATION")
+
 @AndroidEntryPoint
 class ProductDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductDetailBinding
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProductDetailBinding.inflate(layoutInflater)

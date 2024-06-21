@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.praticandotde.commons.utils.Resultado
 import com.example.praticandotde.data.Product
-import br.com.ulbra.exemplorecycler.data.repositories.ProductRepository
+import com.example.praticandotde.data.repositories.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -38,7 +38,7 @@ class ProductViewmodel @Inject constructor(private val productRepository: Produc
         productRepository.addProduct(product)
     }
 
-    fun removeProduct(product: Any) = viewModelScope.launch(Dispatchers.IO) {
+    fun removeProduct(product: Product) = viewModelScope.launch(Dispatchers.IO) {
         productRepository.deleteProduct(product)
         fetchProducts()
     }

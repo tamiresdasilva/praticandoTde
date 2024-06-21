@@ -11,14 +11,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.praticandotde.R
 import com.example.praticandotde.commons.utils.Resultado
-import com.example.praticandotde.presentation.adapters.ProductAdapter
+import com.example.praticandotde.data.Product
 import com.example.praticandotde.databinding.FragmentHomeBinding
+import com.example.praticandotde.presentation.adapters.ProductAdapter
 import com.example.praticandotde.presentation.viewmodels.ProductViewmodel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class HomeFragment<Product : Any> : Fragment() {
+class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var productViewModel: ProductViewmodel
     private lateinit var adapter: ProductAdapter
@@ -47,8 +48,6 @@ class HomeFragment<Product : Any> : Fragment() {
 
         binding.rcProduct.adapter = adapter
     }
-
-
 
     private fun observers() {
         productViewModel.products.observe(viewLifecycleOwner) { resultado ->
